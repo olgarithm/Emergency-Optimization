@@ -15,6 +15,10 @@
 	      	if (status == 'OK' && lat >= 37.70862411 && lat <= 37.83166623 && 
 	      		long >= -122.5136484 && long <= -122.3651383) {
 	      		alert("all gucci");
+	      		// get the file somehow
+	      		lat = lat.substring(0, 5);
+	      		long = long.substring(0, 7);
+
 	      	} else {
 	        	alert('Location typed in was outside of our sample data. Please try again!');
 	      	}
