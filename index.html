@@ -9,22 +9,22 @@
 	  <meta name="author" content="Olga Andreeva">
 	  <link rel="stylesheet" href="style.css">
 	  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
-	  <script src="scripts.js"></script>
 	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANyBAh0Q-j-eI6zXIlbcUkp6pOOAF3SVE"></script>
-	 
+	  <script src="scripts.js"></script>
+	  <script src="http://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
 	</head>
 
 	<body>
 	  <h1>Optimizing Emergency Calls</h1>
-	  <p>insert charts here... TODO</p>
+	  <p>insert charts here... TODO a test to change?</p>
 
 	  <p>Tell us the address and the time of a potential emergency and we'll tell you what type of dispatch is most likely to be called. 
 	     To get accurate information based on sample data, ensure that your address is in San Francisco.</p>
-	  <form>
+	  <form action="javascript:void(0);">
 	  	Address: <br/>
 	  	<input id="address" type="text"> <br/>
 	  	Time: <br/>
-	  	<input type="text">
+	  	<input id="time" type="time">
 	  	<button id="submit">Submit</button>
 	  </form>
 	</body>
