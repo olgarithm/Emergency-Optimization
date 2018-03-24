@@ -16,7 +16,7 @@ public class TimeObject {
 	}
 
 	public String toString() {
-		return time + ", ";
+		return time;
 	}
 
 	public boolean equals(Object other) {

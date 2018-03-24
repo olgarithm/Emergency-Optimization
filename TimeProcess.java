@@ -11,7 +11,7 @@ public class TimeProcess {
         while(input.hasNextLine()){
             String line = input.nextLine();
             String[] values = line.split(",");
-            TimeObject newEmergency = new TimeObject(values[0].substring(11, 19), values[1]);
+            TimeObject newEmergency = new TimeObject(values[0].substring(11, 16), values[1]);
             if (!dispatchTypes.containsKey(newEmergency)) {
                 dispatchTypes.put(newEmergency, new HashMap<String, Integer>());
                 dispatchTypes.get(newEmergency).put(values[1], 1);
@@ -43,7 +43,7 @@ public class TimeProcess {
         }
         PrintStream output = new PrintStream(new File("/Users/OlgaAndreeva/Emergency-Optimization/TimeDispatchMax.js"));
         for (Map.Entry<TimeObject, String> location : maxDispatch.entrySet()) {
-            output.println(location.getKey() + ": " + location.getValue() + ",");
+            output.println("\"" + location.getKey() + "\" : \"" + location.getValue() + "\",");
         }
     }
 }
