@@ -43,7 +43,7 @@ public class LocationProcess {
         }
         PrintStream output = new PrintStream(new File("/Users/OlgaAndreeva/Emergency-Optimization/LatLongDispatchMax.js"));
         for (Map.Entry<LatLongObject, String> location : maxDispatch.entrySet()) {
-            output.println(location.getKey() + ": " + location.getValue());
+            output.println("\"" + location.getKey() + "\" : \"" + location.getValue() + "\",");
         }
     }
 }

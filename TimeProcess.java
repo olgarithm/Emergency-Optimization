@@ -41,9 +41,9 @@ public class TimeProcess {
             }
             maxDispatch.put(key, largestDispatch);
         }
-        PrintStream output = new PrintStream(new File("/Users/OlgaAndreeva/Emergency-Optimization/TimeDispatchMax.txt"));
+        PrintStream output = new PrintStream(new File("/Users/OlgaAndreeva/Emergency-Optimization/TimeDispatchMax.js"));
         for (Map.Entry<TimeObject, String> location : maxDispatch.entrySet()) {
-            output.println(location.getKey() + ": " + location.getValue());
+            output.println(location.getKey() + ": " + location.getValue() + ",");
         }
     }
 }

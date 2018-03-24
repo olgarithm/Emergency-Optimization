@@ -5,8 +5,6 @@
 
 	window.onload = function() {
 		geocoder = new google.maps.Geocoder();
-
-		//readTextFile();
 		$("submit").onclick = findType;
 
 	}
@@ -20,27 +18,28 @@
 	      	
 	      	console.log(results);
 	      	if (status == 'OK' && lat >= 37.70862411 && lat <= 37.83166623 && long >= -122.5136484 && long <= -122.3651383) {
-	      		lat = String(lat).substring(0, 5);
-	      		long = String(long).substring(0, 7);
-	      		console.log(lat);
-	      		console.log(long);
+	      		latString = String(lat).substring(0, 5);
+	      		longString = String(long).substring(0, 7);
+	      		var together = latString + ", " + longString;
+	      		var count = 0;
+	      		while (locations[together] == null && count < 20) {
+	      			long += 0.01;
+		      		longString = String(long).substring(0, 7);
+		      		together = latString + ", " + longString;
+		      		count++;
+	      		}
+	      		if (count == 20) {
+	      			alert("Sorry, we couldn't find that location. Please try again!");
+	      		}
+	      		var foundDispatch = document.createElement("p");
+				var node = document.createTextNode("The most likely type of dispatch called near " + results[0].formatted_address + " is: " + locations[together]);
+				foundDispatch.appendChild(node);
+				var element = $("found-dispatch");
+				element.innerHTML = "";
+				element.appendChild(foundDispatch);
 	      	} else {
-	        	console.log("yikes");
 	        	alert('Location typed in was outside of our sample data. Please try again!');
 	      	}
    		});
 	}
-
-	/* FIGURE OUT TEXT PROCESSING LATER...
-	function readTextFile() {
-	    var client = new XMLHttpRequest();
-		client.open("GET", "http://127.0.0.1:8080/LatLongDispatchMax.txt", true);
-		client.send();
-		client.onreadystatechange = function() {
-		  if(this.readyState == this.HEADERS_RECEIVED) {
-		    content = client.responseText.split("\n");
-		    console.log(content);
-		  }
-		}
-	} */
 }());
