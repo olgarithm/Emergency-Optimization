@@ -11,32 +11,77 @@
 	}
 
 	function initMap() {
-		var mapCenter = {lat: 37.75, lng: -122.41};
+		var mapCenter = {lat: 37.76, lng: -122.41};
 		var map = new google.maps.Map($("map"), {
-			zoom: 4,
-			center: mapCenter
+			center: mapCenter,
+			zoom: 13
 		});
 		// TODO: make the markers different colors and add descriptions
 		var marker1 = new google.maps.Marker(( {
 			position: {lat: 37.79267912, lng: -122.3968535},
+			optimized: false,
 			map: map
 		}));
+		google.maps.event.addListener(marker1, 'click', function(){
+			var infowindow = new google.maps.InfoWindow({
+				content:"221 Market St",
+				position: {lat: 37.80, lng: -122.3968535},
+			});
+			infowindow.open(map);
+		});
+
 		var marker2 = new google.maps.Marker(( {
 			position: {lat: 37.74947846, lng: -122.4028663},
+			optimized: false,
 			map: map
 		}));
+		google.maps.event.addListener(marker2, 'click', function(){
+			var infowindow = new google.maps.InfoWindow({
+				content:"1501 Vermont Street",
+				position: {lat: 37.75, lng: -122.4028663},
+			});
+			infowindow.open(map);
+		});
+
 		var marker3 = new google.maps.Marker(( {
 			position: {lat: 37.74033299, lng: -122.4664486},
+			optimized: false,
 			map: map
 		}));
+		google.maps.event.addListener(marker3, 'click', function(){
+			var infowindow = new google.maps.InfoWindow({
+				content: "46 W Portal Ave",
+				position: {lat: 37.75, lng: -122.4664486},
+			});
+			infowindow.open(map);
+		});
+
 		var marker4 = new google.maps.Marker(( {
 			position: {lat: 37.79035287, lng: -122.4076956},
+			optimized: false,
 			map: map
 		}));
+		google.maps.event.addListener(marker4, 'click', function(){
+			var infowindow = new google.maps.InfoWindow({
+				content:"624 Bush St",
+				position: {lat: 37.80, lng: -122.4664486},
+			});
+			infowindow.open(map);
+		});
+
 		var marker5 = new google.maps.Marker(( {
 			position: {lat: 37.72229807, lng: -122.4113031},
+			title: "644-650 Colby St",
+			optimized: false,
 			map: map
 		}));
+		google.maps.event.addListener(marker5, 'click', function(){
+			var infowindow = new google.maps.InfoWindow({
+				content: "644-650 Colby St",
+				position: {lat: 37.73, lng: -122.4664486},
+			});
+			infowindow.open(map);
+		});
 	}
 
 	function createCharts() {
