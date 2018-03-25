@@ -6,15 +6,24 @@
 	display: flex;
 	justify-content: center;
 	flex-flow: row;
-	padding: 5px 
+	padding: 5px;
+}
+
+#chart1 {
+	width: 95%;
 }
 
 #charts > div {
 	border: 2px solid black;
 	border-radius: 20px;
+	text-align: center;
 	margin: 5px;
 	padding: 10px;
 	font-family: Lato;
+}
+
+h3 {
+	text-align: center;
 }
 
 body {
@@ -23,7 +32,8 @@ body {
 }
 
 #map {
-	height: 800px; 
+	height: 500px; 
+	width: 600px;
 	margin: 0; 
 	padding: 0;
 }

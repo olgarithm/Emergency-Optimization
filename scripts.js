@@ -2,85 +2,86 @@
 	var $ = function(id) { return document.getElementById(id); };
 	var geocoder;
 	var content;
+	var infoWindow;
 
 	window.onload = function() {
 		geocoder = new google.maps.Geocoder();
+		infoWindow = new google.maps.InfoWindow();
 		initMap();
 		createCharts();
 		$("submit").onclick = findType;
 	}
 
 	function initMap() {
-		var mapCenter = {lat: 37.76, lng: -122.41};
+		var mapCenter = {lat: 37.76, lng: -122.43};
 		var map = new google.maps.Map($("map"), {
 			center: mapCenter,
-			zoom: 13
+			zoom: 12
 		});
 		// TODO: make the markers different colors and add descriptions
 		var marker1 = new google.maps.Marker(( {
 			position: {lat: 37.79267912, lng: -122.3968535},
 			optimized: false,
+			label: {text: "1", color: "white"},
 			map: map
 		}));
 		google.maps.event.addListener(marker1, 'click', function(){
-			var infowindow = new google.maps.InfoWindow({
-				content:"221 Market St",
-				position: {lat: 37.80, lng: -122.3968535},
-			});
-			infowindow.open(map);
+			infoWindow.setContent('<div id="content">' + '<h1 id="heading"> 221 Market St </h1>'
+				+ '<p>Average Dispatch Time: <br> 2 hours, 42 minutes, and 15 seconds</p>');
+			infoWindow.setPosition({lat: 37.80267912, lng: -122.3968535});
+			infoWindow.open(map);
 		});
 
 		var marker2 = new google.maps.Marker(( {
 			position: {lat: 37.74947846, lng: -122.4028663},
 			optimized: false,
+			label: {text: "2", color: "white"},
 			map: map
 		}));
 		google.maps.event.addListener(marker2, 'click', function(){
-			var infowindow = new google.maps.InfoWindow({
-				content:"1501 Vermont Street",
-				position: {lat: 37.75, lng: -122.4028663},
-			});
-			infowindow.open(map);
+			infoWindow.setContent('<div id="content">' + '<h1 id="heading"> 1501 Vermont Street </h1>'
+				+ '<p>Average Dispatch Time: <br> 1 hour, 8 minutes, and 56 seconds</p>');
+			infoWindow.setPosition({lat: 37.75947846, lng: -122.4028663});
+			infoWindow.open(map);
 		});
 
 		var marker3 = new google.maps.Marker(( {
 			position: {lat: 37.74033299, lng: -122.4664486},
 			optimized: false,
+			label: {text: "3", color: "white"},
 			map: map
 		}));
 		google.maps.event.addListener(marker3, 'click', function(){
-			var infowindow = new google.maps.InfoWindow({
-				content: "46 W Portal Ave",
-				position: {lat: 37.75, lng: -122.4664486},
-			});
-			infowindow.open(map);
+			infoWindow.setContent('<div id="content">' + '<h1 id="heading"> 46 W Portal Ave </h1>'
+				+ '<p>Average Dispatch Time: <br> 1 hour, 6 minutes, and 36 seconds</p>');
+			infoWindow.setPosition({lat: 37.75033299, lng: -122.4664486});
+			infoWindow.open(map);
 		});
 
 		var marker4 = new google.maps.Marker(( {
 			position: {lat: 37.79035287, lng: -122.4076956},
 			optimized: false,
+			label: {text: "4", color: "white"},
 			map: map
 		}));
 		google.maps.event.addListener(marker4, 'click', function(){
-			var infowindow = new google.maps.InfoWindow({
-				content:"624 Bush St",
-				position: {lat: 37.80, lng: -122.4664486},
-			});
-			infowindow.open(map);
+			infoWindow.setContent('<div id="content">' + '<h1 id="heading"> 624 Bush St </h1>'
+				+ '<p>Average Dispatch Time: <br> 55 minutes and 6 seconds</p>');
+			infoWindow.setPosition({lat: 37.80035287, lng: -122.4076956});
+			infoWindow.open(map);
 		});
 
 		var marker5 = new google.maps.Marker(( {
 			position: {lat: 37.72229807, lng: -122.4113031},
-			title: "644-650 Colby St",
 			optimized: false,
+			label: {text: "5", color: "white"},
 			map: map
 		}));
 		google.maps.event.addListener(marker5, 'click', function(){
-			var infowindow = new google.maps.InfoWindow({
-				content: "644-650 Colby St",
-				position: {lat: 37.73, lng: -122.4664486},
-			});
-			infowindow.open(map);
+			infoWindow.setContent('<div id="content">' + '<h1 id="heading"> 644-650 Colby St </h1>'
+				+ '<p>Average Dispatch Time:<br> 45 minutes and 21 seconds</p>');
+			infoWindow.setPosition({lat: 37.73229807, lng: -122.4113031});
+			infoWindow.open(map);
 		});
 	}
 
@@ -90,18 +91,24 @@
 		var myChart = new Chart(first, {
 		    type: 'bar',
 		    data: {
-		        labels: ["1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM",
-		        		 "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM", "12:00 AM"],
+		        labels: ["1:00 AM - 2:00 AM", "3:00 AM - 4:00 AM", "5:00 AM - 6:00 AM", "7:00 AM - 8:00 AM", "9:00 AM - 10:00 AM", "11:00 AM - 12:00 PM",
+		        		 "1:00 PM - 2:00 PM", "3:00 PM - 4:00 PM", "5:00 PM - 6:00 PM", "7:00 PM - 8:00 PM", "9:00 PM - 10:00 PM", "11:00 PM - 12:00 AM"],
 		        datasets: [{
 		            label: '# of Listings',
-		            data: [5002, 2489, 547, 92, 6, 3, 4, 2, 1, 34, 5, 2, 0, 0, 0, 1, 2, 2, 3, 4, 1, 3, 2, 1],
+		            data: [304 + 283, 304 + 205, 224 + 193, 256 + 303, 348 + 502, 517 + 511, 588 + 506, 536 + 577, 595 + 503, 521 + 549, 487 + 383, 441 + 364],
 		            backgroundColor: [
 		                'rgba(255, 99, 132, 1)',
 		                'rgba(54, 162, 235, 1)',
-		                'rgba(255, 206, 86, 1)',
-		                'rgba(75, 192, 192, 1)',
-		                'rgba(153, 102, 255, 1)',
-		                'rgba(255, 159, 64, 1)'
+		                'rgba(255, 99, 132, 1)',
+		                'rgba(54, 162, 235, 1)',
+		                'rgba(255, 99, 132, 1)',
+		                'rgba(54, 162, 235, 1)',
+		                'rgba(255, 99, 132, 1)',
+		                'rgba(54, 162, 235, 1)',
+		                'rgba(255, 99, 132, 1)',
+		                'rgba(54, 162, 235, 1)',
+		                'rgba(255, 99, 132, 1)',
+		                'rgba(54, 162, 235, 1)',
 		            ],
 		            borderWidth: 1
 		        }]
@@ -113,6 +120,11 @@
 		                ticks: {
 		                    beginAtZero:true
 		                }
+		            }],
+		            xAxes: [{
+		            	ticks: {
+		            		autoSkip: false
+		            	}
 		            }]
 		        }
 		    }
@@ -123,9 +135,9 @@
 		var myDoughnutChart = new Chart(second, {
     		type: "doughnut",
    			data: {
-   				labels: ["Non Life-Threatening", "Potentially Life-Threatening", "Alarm", "Fire"],
+   				labels: ["Potentially Life-Threatening", "Non Life-Threatening", "Alarm", "Fire"],
 		        datasets: [{
-		            data: [671, 786, 1025, 7],
+		            data: [4753, 2468, 2385, 393],
 		            backgroundColor: [
 		                "rgba(255, 99, 132, 1)",
 		                "rgba(54, 162, 235, 1)",
