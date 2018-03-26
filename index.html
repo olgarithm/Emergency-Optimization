@@ -2,58 +2,176 @@
 
 <html lang="en">
 	<head>
-	  <meta charset="utf-8">
+		<meta charset="utf-8">
 
-	  <title>Emergency Optimization</title>
-	  <meta name="description" content="Emergency Optimization">
-	  <meta name="author" content="Olga Andreeva">
-	  <link rel="stylesheet" href="style.css">
-	  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
-	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANyBAh0Q-j-eI6zXIlbcUkp6pOOAF3SVE"></script>
-	  <script src="LatLongDispatchMax.js"></script>
-	  <script src="TimeDispatchMax.js"></script>
-	  <script src="Chart.js"></script>
-	  <script src="scripts.js"></script>
+		<title>Emergency Optimization</title>
+		<meta name="description" content="Emergency Optimization">
+		<meta name="author" content="Olga Andreeva">
+		<link rel="stylesheet" href="style.css">
+		<!-- Animate.css -->
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="complex/css/animate.css">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="complex/css/icomoon.css">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="complex/css/bootstrap.css">
+
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="complex/css/magnific-popup.css">
+
+		<!-- Flexslider  -->
+		<link rel="stylesheet" href="complex/css/flexslider.css">
+
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="complex/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="complex/css/owl.theme.default.min.css">
+
+		<!-- Flaticons  -->
+		<link rel="stylesheet" href="complex/fonts/flaticon/font/flaticon.css">
+
+		<!-- Theme style  -->
+		<link rel="stylesheet" href="complex/css/style.css">
+
+		<!-- Modernizr JS -->
+		<script src="complex/js/modernizr-2.6.2.min.js"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700" rel="stylesheet">
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANyBAh0Q-j-eI6zXIlbcUkp6pOOAF3SVE"></script>
+		<script src="LatLongDispatchMax.js"></script>
+		<script src="TimeDispatchMax.js"></script>
+		<script src="Chart.js"></script>
+		<script src="scripts.js"></script>
 	</head>
-
 	<body>
-		<h1>Optimizing Emergency Calls</h1>
-		<p>TODO: insert description of the website and how it helps</p>
-		<h2>Charts Title</h2>
-		<div id="charts">
-			<div id="chart1">
-				<h3>Emergency Call Times</h3>
-				<canvas id="firstChart" width="450" height="400"></canvas>
-				<p>Emergency calls peak at 3:00 - 4:00 PM!</p>
-			</div>
-			<div id="chart2"> 
-				<h3>Severity of Emergency Calls</h3>
-				<canvas id="secondChart" width="400" height="400"></canvas>
-				<p>Breakdown of severity of emergency calls</p>
-			</div>
+		
+	<div class="colorlib-loader"></div>
 
-			<div id="chart3">
-				<h3>TODO: third chart</h3>
-				<canvas id="thirdChart" width="400" height="400"></canvas>
-				<p>TODO</p>
+	<div id="page">
+		<nav class="colorlib-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-2">
+							<div id="colorlib-logo"><a href="index.html">Emergency Optimization</a></div>
+						</div>
+						<div class="col-xs-10 text-right menu-1">
+							<ul>
+								<li class="active"><a href="index.html">Home</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url(complex/images/img_bg_4.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>Analyzing Emergency Dispatch Data</h1>
+				   					<h2>Providing an insight into San Francisco</h2>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+
+		<div id="colorlib-intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 tabulation animate-box">
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="tab" href="#plan"><i class="flaticon-sketch"></i> Charts</a></li>
+							<li><a data-toggle="tab" href="#general"><i class="flaticon-architect-with-helmet"></i> Dispatch Type</a></li>
+							<li><a data-toggle="tab" href="#manage"><i class="flaticon-engineer"></i> Longest Dispatch Time</a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="plan" class="tab-pane fade in active">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="services-img" style="background-image: url(complex/images/building-1.jpg);"></div>
+									</div>
+									<div class="col-md-6">
+										<div class="services-desc">
+											<div id="charts">
+												<div id="chart1">
+													<h3>Emergency Call Times</h3>
+													<canvas id="firstChart" width="450" height="400"></canvas>
+													<p>Emergency calls peak at 3:00 - 4:00 PM!</p>
+												</div>
+												<div id="chart2"> 
+													<h3>Severity of Emergency Calls</h3>
+													<canvas id="secondChart" width="400" height="400"></canvas>
+													<p>Breakdown of severity of emergency calls</p>
+												</div>
+
+												<div id="chart3">
+													<h3>TODO: third chart</h3>
+													<canvas id="thirdChart" width="400" height="400"></canvas>
+													<p>TODO</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+				         </div>
+				         <div id="general" class="tab-pane fade">
+				         	<div class="row">
+									<div class="col-md-6">
+										<div class="services-img" style="background-image: url(complex/images/building-2.jpg);"></div>
+									</div>
+									<div class="col-md-6">
+										<div class="services-desc">
+											<h2>Most Likely Dispatch Type At Specific Time and Location</h2>
+										  	<p>Tell us the address and the time of a potential emergency and we'll tell you what type of dispatch is most likely to be called. 
+										     To get accurate information based on sample data, ensure that your address is in San Francisco.</p>
+											<form action="javascript:void(0);">
+												Address: <br/>
+												<input id="address" type="text"> <br/>
+												Time: <br/>
+												<input id="time" type="time">
+												<button id="submit">Submit</button>
+											</form>
+											<div id="found-dispatch"></div>	
+										</div>
+									</div>
+								</div>
+						      
+						   </div>
+						   <div id="manage" class="tab-pane fade">
+						   	<div class="row">
+									<div class="col-md-6">
+										<div class="services-img" style="background-image: url(complex/images/building-3.jpg);"></div>
+									</div>
+									<div class="col-md-6">
+										<div class="services-desc">
+											<h2>Areas with Longest Dispatch Times</h2>
+											<p>Here are the areas that take the longest time to dispatch to on average:</p>
+											<div id="map"></div>
+
+											<p>Here's how we can reduce this:</p>
+										</div>
+									</div>
+								</div>
+						   </div>
+			         </div>
+		         </div>
+				</div>
 			</div>
 		</div>
-		<h2>Most Likely Dispatch Type At Specific Time and Location</h2>
-	  	<p>Tell us the address and the time of a potential emergency and we'll tell you what type of dispatch is most likely to be called. 
-	     To get accurate information based on sample data, ensure that your address is in San Francisco.</p>
-		<form action="javascript:void(0);">
-			Address: <br/>
-			<input id="address" type="text"> <br/>
-			Time: <br/>
-			<input id="time" type="time">
-			<button id="submit">Submit</button>
-		</form>
-		<div id="found-dispatch"></div>	
 
-		<h2>Areas with Longest Dispatch Times</h2>
-		<p>Here are the areas that take the longest time to dispatch to on average:</p>
-		<div id="map"></div>
-
-		<p>Here's how we can reduce this:</p>
+		<footer>						
+									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart3" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						
+		</footer>
 	</body>
 </html>
