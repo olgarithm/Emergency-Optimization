@@ -36,37 +36,42 @@
 		<script src="complex/js/modernizr-2.6.2.min.js"></script>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANyBAh0Q-j-eI6zXIlbcUkp6pOOAF3SVE"></script>
 		<script src="LatLongDispatchMax.js"></script>
 		<script src="TimeDispatchMax.js"></script>
 		<script src="Chart.js"></script>
 		<script src="scripts.js"></script>
+		<script src="complex/js/jquery.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="complex/js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="complex/js/bootstrap.min.js"></script>
+		<!-- Waypoints -->
+		<script src="complex/js/jquery.waypoints.min.js"></script>
+		<!-- Stellar Parallax -->
+		<script src="complex/js/jquery.stellar.min.js"></script>
+		<!-- Flexslider -->
+		<script src="complex/js/jquery.flexslider-min.js"></script>
+		<!-- Owl carousel -->
+		<script src="complex/js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="complex/js/jquery.magnific-popup.min.js"></script>
+		<script src="complex/js/magnific-popup-options.js"></script>
+		<!-- Counters -->
+		<script src="complex/js/jquery.countTo.js"></script>
+		<!-- Main -->
+		<script src="complex/js/main.js"></script>
 	</head>
 	<body>
 		
 	<div class="colorlib-loader"></div>
 
 	<div id="page">
-		<nav class="colorlib-nav" role="navigation">
-			<div class="top-menu">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="index.html">Emergency Optimization</a></div>
-						</div>
-						<div class="col-xs-10 text-right menu-1">
-							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(complex/images/img_bg_4.jpg);">
+			   	<li style="background-image: url(emergency-vehicle.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -88,16 +93,13 @@
 				<div class="row">
 					<div class="col-md-12 tabulation animate-box">
 						<ul class="nav nav-tabs">
-							<li class="active"><a data-toggle="tab" href="#plan"><i class="flaticon-sketch"></i> Charts</a></li>
-							<li><a data-toggle="tab" href="#general"><i class="flaticon-architect-with-helmet"></i> Dispatch Type</a></li>
-							<li><a data-toggle="tab" href="#manage"><i class="flaticon-engineer"></i> Longest Dispatch Time</a></li>
+							<li class="active"><a data-toggle="tab" href="#plan"><i class="flaticon-graphic"></i> Charts</a></li>
+							<li><a data-toggle="tab" href="#general"><i class="flaticon-transport"></i> Dispatch Type</a></li>
+							<li><a data-toggle="tab" href="#manage"><i class="flaticon-clock"></i> Longest Dispatch Time</a></li>
 						</ul>
 						<div class="tab-content">
 							<div id="plan" class="tab-pane fade in active">
 								<div class="row">
-									<div class="col-md-6">
-										<div class="services-img" style="background-image: url(complex/images/building-1.jpg);"></div>
-									</div>
 									<div class="col-md-6">
 										<div class="services-desc">
 											<div id="charts">
@@ -121,12 +123,9 @@
 										</div>
 									</div>
 								</div>
-				         </div>
-				         <div id="general" class="tab-pane fade">
-				         	<div class="row">
-									<div class="col-md-6">
-										<div class="services-img" style="background-image: url(complex/images/building-2.jpg);"></div>
-									</div>
+				         	</div>
+					        <div id="general" class="tab-pane fade">
+					         	<div class="row">
 									<div class="col-md-6">
 										<div class="services-desc">
 											<h2>Most Likely Dispatch Type At Specific Time and Location</h2>
@@ -143,13 +142,9 @@
 										</div>
 									</div>
 								</div>
-						      
-						   </div>
-						   <div id="manage" class="tab-pane fade">
-						   	<div class="row">
-									<div class="col-md-6">
-										<div class="services-img" style="background-image: url(complex/images/building-3.jpg);"></div>
-									</div>
+						    </div>
+						    <div id="manage" class="tab-pane fade">
+						   		<div class="row">
 									<div class="col-md-6">
 										<div class="services-desc">
 											<h2>Areas with Longest Dispatch Times</h2>
@@ -161,15 +156,15 @@
 									</div>
 								</div>
 						   </div>
-			         </div>
-		         </div>
+			            </div>
+		            </div>
 				</div>
 			</div>
 		</div>
 
 		<footer>						
 									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart3" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+		<center>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart3" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></center>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						
 		</footer>
