@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6, figure {
     -moz-flex-wrap: wrap;
     width: 100%; }
     #colorlib-intro .nav-tabs li {
-      width: 25%;
+      width: 33%;
       text-align: center;
       text-transform: uppercase;
       font-weight: 500;

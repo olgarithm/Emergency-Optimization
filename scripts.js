@@ -94,7 +94,7 @@
 		        labels: ["1:00 AM - 2:00 AM", "3:00 AM - 4:00 AM", "5:00 AM - 6:00 AM", "7:00 AM - 8:00 AM", "9:00 AM - 10:00 AM", "11:00 AM - 12:00 PM",
 		        		 "1:00 PM - 2:00 PM", "3:00 PM - 4:00 PM", "5:00 PM - 6:00 PM", "7:00 PM - 8:00 PM", "9:00 PM - 10:00 PM", "11:00 PM - 12:00 AM"],
 		        datasets: [{
-		            label: '# of Listings',
+		            label: '# of Emergency Calls',
 		            data: [304 + 283, 304 + 205, 224 + 193, 256 + 303, 348 + 502, 517 + 511, 588 + 506, 536 + 577, 595 + 503, 521 + 549, 487 + 383, 441 + 364],
 		            backgroundColor: [
 		                'rgba(255, 99, 132, 1)',
@@ -157,14 +157,19 @@
 		var thirdChart = new Chart(third, {
 		    type: 'bar',
 		    data: {
-		        labels: ["Entire Home", "Private Room", "Shared Room"],
+		        labels: ["Code 2 Transport", "Fire", "Other", "Code 3 Transport", "Patient Declined Transport", "Against Medical Advice", "Cancelled", "Medical Examiner", "SFPD"],
 		        datasets: [{
-		            label: '# of Listings',
-		            data: [5083, 3437, 186],
+		            label: "Number of Transports",
+		            data: [5039, 2641, 76 + 405 + 42 + 166, 491, 488, 212, 209, 174, 62],
 		            backgroundColor: [
-		                'rgba(255, 99, 132, 1',
-		                'rgba(54, 162, 235, 1)',
-		                'rgba(255, 206, 86, 1)',
+		                "rgba(255, 206, 86, 1)",
+		                "rgba(75, 192, 192, 1)",
+		                "rgba(255, 206, 86, 1)",
+		                "rgba(75, 192, 192, 1)",
+						"rgba(255, 206, 86, 1)",
+		                "rgba(75, 192, 192, 1)",
+						"rgba(255, 206, 86, 1)",
+		                "rgba(75, 192, 192, 1)"
 		            ],
 		            borderWidth: 1
 		        }]
@@ -174,7 +179,15 @@
 		        scales: {
 		            yAxes: [{
 		                ticks: {
-		                    beginAtZero:true
+		                    beginAtZero:true,
+		                    autoSkip: true
+		                }
+		            }]
+		        },
+		        scales: {
+		            xAxes: [{
+		                ticks: {
+		                    autoSkip: false
 		                }
 		            }]
 		        }
@@ -188,8 +201,6 @@
     	geocoder.geocode( { "address": address}, function(results, status) {
 	      	var lat = results[0].geometry.location.lat();
 	      	var long = results[0].geometry.location.lng();
-	      	console.log(time);
-	      	console.log(results);
 	      	if (status == 'OK' && lat >= 37.70862411 && lat <= 37.83166623 && long >= -122.5136484 && long <= -122.3651383) {
 	      		var latString = String(lat).substring(0, 5);
 	      		var longString = String(long).substring(0, 7);
@@ -212,11 +223,6 @@
 				element.innerHTML = "";
 				element.appendChild(foundLocation);
 	      		var count = 0;
-	      		/*while (times[time] == null && count < 20) {
-	      			time;
-		      		timeString = String(long).substring(0, 7);
-		      		count++;
-	      		}*/
 	      		if (count == 20) {
 	      			alert("Sorry, we couldn't find that time. Please try again!");
 	      		}
@@ -225,7 +231,6 @@
 												   " is: " + times[time]);
 				foundTime.appendChild(node);
 				element.appendChild(foundTime);
-				// TODO combine the above dispatches
 	      	} else {
 	        	alert('Location typed in was outside of our sample data. Please try again!');
 	      	}
